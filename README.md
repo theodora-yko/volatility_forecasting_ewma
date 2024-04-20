@@ -1,4 +1,4 @@
-For the summary of my work, please refer to: ewma_stock_volatility_prediction_summary_report.pdf
+For the summary of my work, please refer to: EWMA_Stock_Volatility_Prediction_Summary_Report.pdf
 <hr> 
 
 # Goals of the Project: 
