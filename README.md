@@ -11,11 +11,15 @@ analysis of the data and the algorithm used to create predictions.
 
 ## Baseline EWMA Model:
 For day $t$, I use monthly volatility data from day $t-lookback-1$ to day $t-1$ to predict the value for day $t$. Based on the exponential decay of autocorrelation values, we assign exponential weights to the past data and build an exponential weighted moving average model (EWMA). The model predicts volatility of day $t$, $\hat{MV}_t$ by taking in
+
     * Input: 
+    
           * Exponential decay rate $\alpha$.
           * Length of lookback ($L$) = highest lag whose autocorrelation is outside the confidence interval.
           * Previous days' monthly volatility data within the length of lookback from the previous day of prediction.
+          
     * Score Equation:
+    
           * Since we value the accuracy of the volatility prediction as well as the 1 stdev confidence interval, we decide to use following score equations for each for model comparisons. 
           * For the volatility prediction, we use Root Mean Squared Error (RMSE) to see the overall size of error for all predictions for each stock: 
           $$\sqrt{\frac{\sum_{t = t_0}^{t_1}(MV_t - \hat{MV_{t}})^2}{t_1 - t_0}}.$$
