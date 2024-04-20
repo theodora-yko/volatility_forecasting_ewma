@@ -19,10 +19,8 @@ For day $t$, I use monthly volatility data from day $t-lookback-1$ to day $t-1$ 
           
 * Score Equation:
    * Since we value the accuracy of the volatility prediction as well as the 1 stdev confidence interval, we decide to use following score equations for each for model comparisons. 
-   * For the volatility prediction, we use Root Mean Squared Error (RMSE) to see the overall size of error for all predictions for each stock: 
-   $$\sqrt{\frac{\sum_{t = t_0}^{t_1}(MV_t - \hat{MV_{t}})^2}{t_1 - t_0}}.$$
-   *  For the confidence interval ($C(t)$), we use the coverage rate: For a confidence interval on date $t$ from date $t_0$ to $t_1$, 
-   $$\frac{\sum_{t = t_0}^{t_1}(\mathbb{1}_{MV_t \in C(t)})}{t_1 - t_0} * 100 %$$.
+   * For the volatility prediction, we use Root Mean Squared Error (RMSE) to see the overall size of error for all predictions for each stock: $$\sqrt{\frac{\sum_{t = t_0}^{t_1}(MV_t - \hat{MV_{t}})^2}{t_1 - t_0}}.$$
+   *  For the confidence interval ($C(t)$), we use the coverage rate: For a confidence interval on date $t$ from date $t_0$ to $t_1$, $$\frac{\displaystyle\sum_{t = t_0}^{t_1} \mathbb{1}_{MV_t \in C(t)} }{t_1 - t_0} * 100 %$$.
 
 ## Dynamic-Weight Adjusted EWMA Model: 
 Inspired by weighted linear regression's mechanism, to decrease the lag, we want to assign higher weights to more recent and important data based on some feature that can be engineered from the historical data. We notice that one way to do so is coming up with an indicator of a distribution shock (e.g. stock c). Such can be detected by comparing the RMSE of the most recent prediction to the past RMSE values. 
