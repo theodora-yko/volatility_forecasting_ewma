@@ -27,11 +27,9 @@ Inspired by weighted linear regression's mechanism, to decrease the lag, we want
 
 Specifically, if RMSE becomes larger than some confidence interval (within 1 standard deviation) then it means there has been a shift in the recent distribution of data. Then, the model needs to adjust the weights of the moving average assigned to $MV_{t-1}, \cdots MV_{t-lookback-1}$, specifically with focus on increasing the weight of $MV_{t-1}$. 
 
-\begin{enumerate}
-    \item Initialize the "weight" for each power of each exponential coefficient as 1.  
-    \item Compute autocorrelation to detect how much more "significant" the recent values got. 
-    \item Based on the ratio of autocorrelation, decrease the power of more significant acf by subtracting autocorrelation $\cdot$ step\_size from the current power. 
-\end{enumerate}
+1. Initialize the "weight" for each power of each exponential coefficient as 1.  
+2. Compute autocorrelation to detect how much more "significant" the recent values got. 
+3. Based on the ratio of autocorrelation, decrease the power of more significant acf by subtracting autocorrelation $\cdot$ step\_size from the current power. 
 
 Note that since alpha $<$ 1, the lower the power of alpha is, the higher weight is imposed to the actual data. Also, this ensures that same weighting mechanism applies for negative powers. Furthermore, since the power weights will change over time, influenced by all past historical data, it also takes into account long term memory of the past data while adapting to the recent changes as well.  
 
