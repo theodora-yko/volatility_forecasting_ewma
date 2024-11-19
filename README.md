@@ -1,4 +1,6 @@
-For the summary of my work, please refer to: EWMA_Stock_Volatility_Prediction_Summary_Report.pdf
+* For the summary of my work, please refer to: [EWMA_Stock_Volatility_Prediction_Summary_Report.pdf](https://github.com/theodora-yko/volatility_forecasting_ewma/blob/main/EWMA_Stock_Volatility_Prediction_Summary_Report.pdf)
+
+* To take a look at the code work / notebook, please refer to: [volatility_forecasting_ewma/blob/main/data_exercise_TheodoraKo.ipynb](https://github.com/theodora-yko/volatility_forecasting_ewma/blob/main/data_exercise_TheodoraKo.ipynb)
 <hr> 
 
 # Goals of the Project: 
